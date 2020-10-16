@@ -10,7 +10,7 @@
     // Your JavaScript goes here!
     let validPLay;
     do {
-        let playerChoice = prompt("Rock, paper or scissors?").toLowerCase();
+        var playerChoice = prompt("Rock, paper or scissors?").toLowerCase();
         if ((playerChoice !== "rock") && (playerChoice !== "paper") && (playerChoice !== "scissors")) {
             validPLay = false;
             alert("Thats is not a valid option");
@@ -19,6 +19,21 @@
         }
         console.log(playerChoice);
     } while (validPLay === false);
+
+    function computerPlay() {
+        computerChoice = Math.floor(Math.random() * 3)
+        switch (computerChoice) {
+            case 0: 
+                return "rock";
+                break;
+            case 1: 
+                return "paper"
+                break;
+            case 2: 
+                return "scissors"
+                break;
+        }
+    }
   </script>
 </body>
 </html>
