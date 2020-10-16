@@ -10,72 +10,82 @@
     // Your JavaScript goes here!
     let validPLay;
     do {
-        var playerChoice = prompt("Rock, paper or scissors?").toLowerCase();
-        if ((playerChoice !== "rock") && (playerChoice !== "paper") && (playerChoice !== "scissors")) {
-            validPLay = false;
-            alert("Thats is not a valid option");
-        } else {
-            validPLay = true;
-        }
-        console.log(playerChoice);
-    } while (validPLay === false);
+        do {
+            var playerChoice = prompt("Rock, paper or scissors?").toLowerCase();
+            if ((playerChoice !== "rock") && (playerChoice !== "paper") && (playerChoice !== "scissors")) {
+                validPLay = false;
+                alert("Thats is not a valid option");
+            } else {
+                validPLay = true;
+            }
+            console.log(playerChoice);
+        } while (validPLay === false);
 
-    function computerPlay() {
-        computerChoice = Math.floor(Math.random() * 3)
-        switch (computerChoice) {
-            case 0: 
-                return "rock";
+        function computerPlay() {
+            computerChoice = Math.floor(Math.random() * 3)
+            switch (computerChoice) {
+                case 0: 
+                    return "rock";
+                    break;
+                case 1: 
+                    return "paper"
+                    break;
+                case 2: 
+                    return "scissors"
+                    break;
+            }
+        }
+
+        switch (playerChoice) {
+            case "rock":
+                switch (computerPlay()) {
+                    case "rock": 
+                        alert("Computer played: rock \n It is a tie!");
+                        break;
+                    case "paper": 
+                        alert("Computer played: paper \n You loose :(");
+                        break;
+                    case "scissors": 
+                        alert("Computer played: scissors \n You win!");
+                        break;
+                }
                 break;
-            case 1: 
-                return "paper"
+            case "paper":
+                switch (computerPlay()) {
+                    case "rock": 
+                        alert("Computer played: rock \n You win!");
+                        break;
+                    case "paper": 
+                        alert("Computer played: paper \n It is a tie!");
+                        break;
+                    case "scissors": 
+                        alert("Computer played: scissors \n You loose :(");
+                        break;
+                }
                 break;
-            case 2: 
-                return "scissors"
+            case "scissors":
+                switch (computerPlay()) {
+                    case "rock": 
+                        alert("Computer played: rock \n You loose :(");
+                        break;
+                    case "paper": 
+                        alert("Computer played: paper \n You win!");
+                        break;
+                    case "scissors": 
+                        alert("Computer played: scissors \n It is a tie!");
+                        break;
+                }
                 break;
         }
-    }
 
-    switch (playerChoice) {
-        case "rock":
-            switch (computerPlay()) {
-                case "rock": 
-                    alert("Computer played: rock \n It is a tie!");
-                    break;
-                case "paper": 
-                    alert("Computer played: paper \n You loose :(");
-                    break;
-                case "scissors": 
-                    alert("Computer played: scissors \n You win!");
-                    break;
+        do {
+            var playAgain = prompt("Play again? type 'yes' or 'no'").toLowerCase();
+            if ((playAgain != "yes") && (playAgain !="no")) {
+                alert("That is not a valid option")
             }
-            break;
-        case "paper":
-            switch (computerPlay()) {
-                case "rock": 
-                    alert("Computer played: rock \n You win!");
-                    break;
-                case "paper": 
-                    alert("Computer played: paper \n It is a tie!");
-                    break;
-                case "scissors": 
-                    alert("Computer played: scissors \n You loose :(");
-                    break;
-            }
-            break;
-        case "scissors":
-            switch (computerPlay()) {
-                case "rock": 
-                    alert("Computer played: rock \n You loose :(");
-                    break;
-                case "paper": 
-                    alert("Computer played: paper \n You win!");
-                    break;
-                case "scissors": 
-                    alert("Computer played: scissors \n It is a tie!");
-                    break;
-            }
-            break;
-    }
+        } while ((playAgain != "yes") && (playAgain !="no"));
+    } while (playAgain === "yes");
+    alert("Thanks for playing!");
   </script>
 </body>
 </html>
