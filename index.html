@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page Title</title>
+  <meta charset="UTF-8"/>
+</head>
+<body>
+  <script>
+    // Your JavaScript goes here!
+    let validPLay;
+    do {
+        let playerChoice = prompt("Rock, paper or scissors?").toLowerCase();
+        if ((playerChoice !== "rock") && (playerChoice !== "paper") && (playerChoice !== "scissors")) {
+            validPLay = false;
+            alert("Thats is not a valid option");
+        } else {
+            validPLay = true;
+        }
+        console.log(playerChoice);
+    } while (validPLay === false);
+  </script>
+</body>
+</html>
+
+<!-- 
+    let validPLay;
+    do {
+        let playerChoice = prompt("Rock, paper or scissors?");
+        if ((playerChoice !== "rock") && (playerChoice !== "paper") && (playerChoice !== "scissors")) {
+            validPLay = false;
+            alert("Thats is not a valid option");
+        } else {
+            validPLay = true;
+        }
+    } while (validPLay = false);
+-->
+
