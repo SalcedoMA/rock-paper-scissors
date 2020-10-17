@@ -11,7 +11,10 @@
     let validPLay;
     do {
         do {
-            var playerChoice = prompt("Rock, paper or scissors?").toLowerCase();
+            var playerChoice = prompt("Rock, paper or scissors?");
+            if (playerChoice != null) {
+                playerChoice = playerChoice.toLowerCase();
+            }
             if ((playerChoice !== "rock") && (playerChoice !== "paper") && (playerChoice !== "scissors")) {
                 validPLay = false;
                 alert("Thats is not a valid option");
