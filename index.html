@@ -14,11 +14,11 @@
             if (playerChoice != null) {
                 playerChoice = playerChoice.toLowerCase();
             }
-            if ((playerChoice !== "rock") && (playerChoice !== "paper") && (playerChoice !== "scissors")) {
+            if ((playerChoice !== "rock") && (playerChoice !== "paper") && (playerChoice !== "scissors") && (playerChoice !== null)) {
                 alert("Thats is not a valid option");
             }
             console.log(playerChoice);
-        } while (((playerChoice !== "rock") && (playerChoice !== "paper") && (playerChoice !== "scissors")));
+        } while ((playerChoice !== "rock") && (playerChoice !== "paper") && (playerChoice !== "scissors") && (playerChoice !== null));
 
         function computerPlay() {
             computerChoice = Math.floor(Math.random() * 3)
@@ -75,14 +75,18 @@
                         break;
                 }
                 break;
+            case null: 
+                playAgain = "no";
+                break;
+            
         }
 
-        do {
+        while ((playAgain != "yes") && (playAgain !="no")) {
             var playAgain = prompt("Play again? type 'yes' or 'no'").toLowerCase();
             if ((playAgain != "yes") && (playAgain !="no")) {
                 alert("That is not a valid option")
             }
-        } while ((playAgain != "yes") && (playAgain !="no"));
+        } 
     } while (playAgain === "yes");
     alert("Thanks for playing!");
   </script>
